@@ -68,3 +68,5 @@ end
 gem 'activeadmin'
 gem 'devise'
 gem "sassc-rails"
+gem 'byebug'
+gem 'rack-cors'

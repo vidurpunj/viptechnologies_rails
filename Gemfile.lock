@@ -96,6 +96,7 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -198,6 +199,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.9.1)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -308,6 +311,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bootsnap
+  byebug
   capybara
   debug
   devise
@@ -315,6 +319,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
+  rack-cors
   rails (~> 7.1.3, >= 7.1.3.2)
   redis (>= 4.0.1)
   sassc-rails
