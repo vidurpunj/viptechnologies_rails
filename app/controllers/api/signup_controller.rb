@@ -11,10 +11,32 @@ class Api::SignupController < ApplicationController
     user.password_confirmation = params[:confirmation_password]
     user.gender = params[:gender]
     user.country = params[:country]
-      if user.save(validate: false)
-        render json: { message: "User created successfully", status: :ok }
-      else
-        render json: { message: "User not created", status: 500, error: 'This Email already exists.' }
-      end
+    user.terms_and_condition = params[:terms_and_condition]
+    byebug
+    if user.save
+      render json: { message: "User created successfully", status: 200 }
+    else
+      render json: { message: user.errors.full_messages, status: 500, error: 'This Email already exists.' }
+    end
+  end
+
+  def login
+    user = User.find_by_email(params[:email])
+    if user&.valid_password?(params[:password])
+      payload = params[:email]
+      token = encode_token(payload)
+      render json: {
+        status: "success",
+        code: 200,
+        "message": "Password matches. You are now logged in.",
+        "access_token": token
+      }
+    else
+      render json: {
+        status: "error",
+        code: 200,
+        "message": "Email & Password do not match."
+      }
+    end
   end
 end

@@ -66,7 +66,8 @@ group :test do
   gem "selenium-webdriver"
 end
 gem 'activeadmin'
-gem 'devise'
+gem 'devise', '~> 4.9.3'
 gem "sassc-rails"
 gem 'byebug'
 gem 'rack-cors'
+gem 'jwt', '~> 2.8.1'

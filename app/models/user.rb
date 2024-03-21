@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
-
+  validates_uniqueness_of :email
   def self.ransackable_attributes(auth_object = nil)
     # List the attributes you want to allow for searching
     # Exclude sensitive attributes like 'encrypted_password', 'password_reset_token', etc.
