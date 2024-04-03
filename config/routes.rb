@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   post '/signup', to: 'api/signup#register'
   post '/signin', to: 'api/signup#login'
+  post '/news_letter/subscribe', to: 'api/news_letter#subscribe'
 end
+
+

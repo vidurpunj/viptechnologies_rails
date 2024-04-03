@@ -12,11 +12,10 @@ class Api::SignupController < ApplicationController
     user.gender = params[:gender]
     user.country = params[:country]
     user.terms_and_condition = params[:terms_and_condition]
-    byebug
     if user.save
-      render json: { message: "User created successfully", status: 200 }
+      render json: { message: "User created successfully", status: 200 } and return
     else
-      render json: { message: user.errors.full_messages, status: 500, error: 'This Email already exists.' }
+      render json: { message: user.errors.full_messages, status: 500, error: 'This Email already exists.' } and return
     end
   end
 

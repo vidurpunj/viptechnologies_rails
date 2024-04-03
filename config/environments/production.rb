@@ -53,9 +53,9 @@ Rails.application.configure do
   config.force_ssl = false
 
   # Log to STDOUT by default
-  config.logger = ActiveSupport::Logger.new(STDOUT)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+#  config.logger = ActiveSupport::Logger.new(STDOUT)
+#    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+#    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -64,6 +64,7 @@ Rails.application.configure do
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
   # want to log everything, set the level to "debug".
   config.log_level = :debug
+  RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
