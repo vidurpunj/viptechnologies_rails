@@ -26,3 +26,11 @@ development:
   password: postgres
   host: localhost
   port: 5432
+
+production:
+  <<: *default
+  database: viptechnologies_rails_db
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
