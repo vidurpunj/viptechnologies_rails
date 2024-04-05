@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'api/signup#register'
   post '/signin', to: 'api/signup#login'
   post '/news_letter/subscribe', to: 'api/news_letter#subscribe'
+  post '/contact_us/create', to: 'api/contact#create'
 end
 
 
